@@ -1,0 +1,18 @@
+*           text eol=lf
+*.csv       text eol=crlf
+*.pdf       binary
+*.dcm       binary
+*.gz        binary
+*.png       binary
+*.jpg       binary
+*.eot       binary
+*.xlsx      binary
+*.ttf       binary
+*.woff      binary
+*.woff2     binary
+*.pt        binary
+*.pth       binary
+ants*       binary
+*.zip       binary
+*.ico       binary
+*.exe       binary
