@@ -1,1 +1,7 @@
 pyinstaller==6.2.0
+
+# Code lintrer/validator
+black==23.11.0
+yapf==0.40.2
+isort==5.12.0
+toml==0.10.2

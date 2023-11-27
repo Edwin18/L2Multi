@@ -1,0 +1,19 @@
+# Here you can write your custom setting for python formatting.
+# Lib - https://github.com/google/yapf
+# List of all rules - https://github.com/google/yapf#knobs
+[tool.yapf]
+based_on_style = "yapf"
+indent_width = "4"
+BLANK_LINE_BEFORE_NESTED_CLASS_OR_DEF = "false"
+COLUMN_LIMIT = "120" # max line-length
+
+[tool.yapfignore]
+ignore_patterns = [
+  "example/**/*.py"
+]
+
+[tool.isort]
+line_length = "120" # max line-length
+
+[tool.ruff]
+line-length = 120
