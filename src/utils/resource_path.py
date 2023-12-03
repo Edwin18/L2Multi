@@ -2,7 +2,7 @@ import os
 import sys
 
 
-def resource_path(relative_path):
+def resource_path(relative_path: str) -> str:
     """Get the absolute path to a resource for PyInstaller"""
     try:
         # PyInstaller creates a temporary folder and stores the path in _MEIPASS
