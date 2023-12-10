@@ -5,7 +5,7 @@
 based_on_style = "yapf"
 indent_width = "4"
 BLANK_LINE_BEFORE_NESTED_CLASS_OR_DEF = "false"
-COLUMN_LIMIT = "120" # max line-length
+COLUMN_LIMIT = "160" # max line-length
 
 [tool.yapfignore]
 ignore_patterns = [
@@ -13,10 +13,7 @@ ignore_patterns = [
 ]
 
 [tool.isort]
-line_length = "120" # max line-length
-
-[tool.ruff]
-line-length = 120
+line_length = "160" # max line-length
 
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
 [tool.pyright]

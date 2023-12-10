@@ -37,7 +37,7 @@ clean:
 
 style:
 	$(call PRINT_BOXED_MESSAGE,PEP8 & Python styles)
-	@black --line-length 120 src/ && yapf -ir src/ && isort src/
+	@black --line-length 160 src/ && yapf -ir src/ && isort src/
 
 build:
 	$(call PRINT_BOXED_MESSAGE,Build production version of L2Multi application)
