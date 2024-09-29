@@ -3,13 +3,21 @@ from typing import List
 
 from const import DEFAULT_EVENTS
 from utils.singleton import SingletonBase
+from utils.time import create_datetime
 
 
 class Event:
-    def __init__(self, name: str, time: datetime, day: List[str]):
+    def __init__(self, tech_name: str, name: str, time: datetime, days: List[str], win: int, los: int, msg: str):
+        self.tech_name = tech_name
         self.name = name
         self.time = time
-        self.days = day
+        self.days = days
+        self.win = win
+        self.los = los
+        self.msg = msg
+
+    def update_time(self):
+        self.time = create_datetime(self.time.strftime("%H:%M"), self.days)
 
 
 class Events(SingletonBase):
@@ -23,10 +31,14 @@ class Events(SingletonBase):
                 f"__{event_name}",
                 [
                     Event(
+                        DEFAULT_EVENTS[event_name]["tech_name"],
                         DEFAULT_EVENTS[event_name]["name"],
-                        datetime.strptime(time, "%H:%M"),
-                        DEFAULT_EVENTS[event_name]["day"],
-                    ) for time in DEFAULT_EVENTS[event_name]["time"]
+                        create_datetime(time, DEFAULT_EVENTS[event_name]["days"]),
+                        DEFAULT_EVENTS[event_name]["days"],
+                        DEFAULT_EVENTS[event_name]["win"],
+                        DEFAULT_EVENTS[event_name]["los"],
+                        DEFAULT_EVENTS[event_name]["msg"],
+                    ) for time in DEFAULT_EVENTS[event_name]["times"]
                 ],
             )
 
